@@ -1,18 +1,19 @@
 <template>
-  <button
+  <button>hello-world</button>
+  <!-- <button
     ref="_ref"
     :class="[
-      // ns.b(),
-      // ns.m(_type),
-      // ns.m(_size),
-      // ns.is('disabled', _disabled),
-      // ns.is('loading', loading),
-      // ns.is('plain', plain),
-      // ns.is('round', round),
-      // ns.is('circle', circle),
-      // ns.is('text', text),
-      // ns.is('link', link),
-      // ns.is('has-bg', bg),
+      ns.b(),
+      ns.m(_type),
+      ns.m(_size),
+      ns.is('disabled', _disabled),
+      ns.is('loading', loading),
+      ns.is('plain', plain),
+      ns.is('round', round),
+      ns.is('circle', circle),
+      ns.is('text', text),
+      ns.is('link', link),
+      ns.is('has-bg', bg),
     ]"
     :aria-disabled="_disabled || loading"
     :disabled="_disabled || loading"
@@ -37,8 +38,10 @@
     >
       <slot />
     </span>
-  </button>
+  </button> -->
 </template>
 <script lang="ts" setup>
-
+defineOptions({
+  name: 'BlButton',
+})
 </script>
