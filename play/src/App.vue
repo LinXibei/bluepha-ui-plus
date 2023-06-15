@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-import Button from "../packages/components/button";
+import Button from "../../packages/components/button";
 </script>
 
 <template>

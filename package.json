@@ -3,16 +3,33 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "dev": "pnpm -C play dev",
+    "build:play": "pnpm -C play build",
+    "preview": "vite preview",
+    "gen": "bash ./scripts/generate.sh"
   },
   "dependencies": {
+    "@bluepha-ui-plus/components": "workspace:^",
+    "@bluepha-ui-plus/utils": "workspace:^",
+    "@rollup/plugin-json": "^6.0.0",
+    "@types/vue": "^2.0.0",
+    "@vue/shared": "^3.3.4",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-typescript2": "^0.34.1",
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@rollup/plugin-commonjs": "^25.0.1",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-typescript": "^11.1.1",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "element-plus": "^2.3.6",
+    "rollup": "^3.25.1",
+    "rollup-plugin-vue": "^6.0.0",
+    "tslib": "^2.5.3",
     "typescript": "^5.0.2",
     "unplugin-vue-define-options": "^1.3.7",
     "unplugin-vue-macros": "^2.2.1",
