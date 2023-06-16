@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "pnpm -C play dev",
     "build:play": "pnpm -C play build",
-    "build:lib": "pnpm run clean && pnpm -C build build",
+    "build:lib": "pnpm run clean && pnpm -C build start",
     "clean": "rimraf dist",
     "preview": "vite preview",
     "gen": "bash ./scripts/generate.sh"

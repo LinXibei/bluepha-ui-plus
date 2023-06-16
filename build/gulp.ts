@@ -1,6 +1,6 @@
 import { spawn } from 'child_process'
-import { projRoot } from './gulpfile'
 import * as path from 'path'
+const projRoot = path.resolve(__dirname, '..')
 export const buildRoot = path.resolve(projRoot, 'build')
 export const run = async (command: string, cwd: string = projRoot) =>
   new Promise<void>((resolve, reject) => {

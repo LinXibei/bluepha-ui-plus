@@ -4,8 +4,7 @@ import * as path from 'path'
 import * as fs from 'fs'
 import { rollup } from 'rollup'
 import esbuild, { minify as minifyPlugin } from 'rollup-plugin-esbuild'
-import VueMacros from 'unplugin-vue-macros/dist/rollup'
-import type { OutputOptions, RollupBuild } from 'rollup'
+import VueMacros from 'unplugin-vue-macros/rollup'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import commonjs from '@rollup/plugin-commonjs'
 export const PKG_NAME = 'bluepha-ui-plus'
@@ -75,7 +74,7 @@ const plugins = [
 //     })
 //   )
 // }
-const componentsDir = 'packages/components'
+const componentsDir = '../packages/components'
 const componentsName = fs.readdirSync(path.resolve(componentsDir))
 const componentsEntry = componentsName.filter(
   (name) => !name.endsWith('.ts') && !name.endsWith('.json')

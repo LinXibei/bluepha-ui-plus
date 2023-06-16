@@ -1,6 +1,6 @@
 import { parallel, series } from 'gulp'
 import { copyFile, mkdir } from 'fs/promises'
-import { copy } from 'fs-extra/lib/copy'
+import * as fse from 'fs-extra'
 import * as path from 'path'
 import { blOutput, buildConfig } from './rollup'
 import { withTaskName, runTask, run } from './gulp'
@@ -25,7 +25,7 @@ export const copyTypesDefinitions: Function = (done) => {
   const src = path.resolve(blOutput, 'types', 'packages')
   const copyTypes = (module) =>
     withTaskName(`copyTypes:${module}`, () =>
-      copy(src, buildConfig[module].output.path, { recursive: true })
+      fse.copy(src, buildConfig[module].output.path, { recursive: true })
     )
 
   return parallel(copyTypes('esm'), copyTypes('cjs'))(done)
