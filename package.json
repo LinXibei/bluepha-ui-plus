@@ -1,10 +1,12 @@
 {
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "pnpm -C play dev",
     "build:play": "pnpm -C play build",
+    "build:lib": "pnpm run clean && rollup -c",
+    "clean": "rimraf dist",
     "preview": "vite preview",
     "gen": "bash ./scripts/generate.sh"
   },
@@ -14,6 +16,7 @@
     "@rollup/plugin-json": "^6.0.0",
     "@types/vue": "^2.0.0",
     "@vue/shared": "^3.3.4",
+    "rimraf": "^5.0.1",
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
     "vue": "^3.2.47"
