@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev",
@@ -14,5 +15,14 @@
   "license": "ISC",
   "devDependencies": {
     "vitepress": "1.0.0-beta.2"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "consola": "^3.1.0",
+    "escape-html": "^1.0.3",
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0",
+    "prismjs": "^1.29.0",
+    "@bluepha-ui-plus": "workspace:*"
   }
 }

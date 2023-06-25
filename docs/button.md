@@ -47,7 +47,27 @@
 </div> -->
 </template>
 ```
-:::
+
+**Output**
+```
+<template>
+  <bl-button border>默认按钮</bl-button>
+  <bl-button type="primary">主要按钮</bl-button>
+  <bl-button type="success">成功按钮</bl-button>
+  <bl-button type="info">信息按钮</bl-button>
+  <bl-button type="warning">警告按钮</bl-button>
+  <bl-button type="danger">危险按钮</bl-button>
+
+<!-- <div>
+  <bl-button icon="bl-icon-search" circle></bl-button>
+  <bl-button type="primary" icon="bl-icon-edit" circle></bl-button>
+  <bl-button type="success" icon="bl-icon-check" circle></bl-button>
+  <bl-button type="info" icon="bl-icon-message" circle></bl-button>
+  <bl-button type="warning" icon="bl-icon-star-off" circle></bl-button>
+  <bl-button type="danger" icon="bl-icon-delete" circle></bl-button>
+</div> -->
+</template>
+```
 
 ### 禁用状态
 

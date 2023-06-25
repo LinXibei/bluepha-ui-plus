@@ -1,0 +1,259 @@
+@import "mixins/mixins";
+@import "common/var";
+@mixin genThemeBase($backgroundColorWeight, $borderColorWeight, $fontColorWeight, $hoverColorWeight) {
+  background-color:#EBF6FF;
+  border-color: mix($--tag-primary-color, $--color-white, $borderColorWeight);
+  color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
+
+  @include when(hit) {
+    border-color: $--tag-primary-color;
+  }
+
+  .bl-tag__close {
+    color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
+    &:hover {
+      color: $--color-white;
+      background-color: mix($--tag-primary-color, $--color-white, $hoverColorWeight);
+    }
+  }
+
+  &.bl-tag--info {
+    background-color: #F3F3F5;
+    border-color: #E4E7ED;
+    color: $--color-text-regular;
+
+    @include when(hit) {
+      border-color: $--tag-info-color;
+    }
+
+    .bl-tag__close {
+      color: mix($--tag-info-color, $--color-white, $fontColorWeight);
+      &:hover {
+        color: $--color-white;
+        background-color: mix($--tag-info-color, $--color-white, $hoverColorWeight);
+      }
+    }
+  }
+
+  &.bl-tag--success {
+    background-color: #EEFFE5;
+    border-color: mix($--tag-success-color, $--color-white, $borderColorWeight);
+    color: mix($--tag-success-color, $--color-white, $fontColorWeight);
+
+    @include when(hit) {
+      border-color: $--tag-success-color;
+    }
+
+    .bl-tag__close {
+      color: mix($--tag-success-color, $--color-white, $fontColorWeight);
+      &:hover {
+        color: $--color-white;
+        background-color: mix($--tag-success-color, $--color-white, $hoverColorWeight);
+      }
+    }
+  }
+
+  &.bl-tag--warning {
+    background-color:#FFF8EB;
+    border-color: mix($--tag-warning-color, $--color-white, $borderColorWeight);
+    color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
+
+    @include when(hit) {
+      border-color: $--tag-warning-color;
+    }
+
+    .bl-tag__close {
+      color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
+      &:hover {
+        color: $--color-white;
+        background-color: mix($--tag-warning-color, $--color-white, $hoverColorWeight);
+      }
+    }
+  }
+
+  &.bl-tag--danger {
+    background-color:#FFF0F0;
+    border-color: mix($--tag-danger-color, $--color-white, $borderColorWeight);
+    color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
+
+    @include when(hit) {
+      border-color: $--tag-danger-color;
+    }
+
+    .bl-tag__close {
+      color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
+      &:hover {
+        color: $--color-white;
+        background-color: mix($--tag-danger-color, $--color-white, $hoverColorWeight);
+      }
+    }
+  }
+}
+@mixin genTheme($backgroundColorWeight, $borderColorWeight, $fontColorWeight, $hoverColorWeight) {
+  background-color: mix($--tag-primary-color, $--color-white, $backgroundColorWeight);
+  border-color: mix($--tag-primary-color, $--color-white, $borderColorWeight);
+  color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
+
+  @include when(hit) {
+    border-color: $--tag-primary-color;
+  }
+
+  .bl-tag__close {
+    color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
+    &:hover {
+      color: $--color-white;
+      background-color: mix($--tag-primary-color, $--color-white, $hoverColorWeight);
+    }
+  }
+
+  &.bl-tag--info {
+    background-color: mix($--tag-info-color, $--color-white, $backgroundColorWeight);
+    border-color: $--border-color-base;
+    color: $--color-text-regular;
+
+    @include when(hit) {
+      border-color: $--tag-info-color;
+    }
+
+    .bl-tag__close {
+      color: mix($--tag-info-color, $--color-white, $fontColorWeight);
+      &:hover {
+        color: $--color-white;
+        background-color: mix($--tag-info-color, $--color-white, $hoverColorWeight);
+      }
+    }
+  }
+
+  &.bl-tag--success {
+    background-color: mix($--tag-success-color, $--color-white, $backgroundColorWeight);
+    border-color: mix($--tag-success-color, $--color-white, $borderColorWeight);
+    color: mix($--tag-success-color, $--color-white, $fontColorWeight);
+
+    @include when(hit) {
+      border-color: $--tag-success-color;
+    }
+
+    .bl-tag__close {
+      color: mix($--tag-success-color, $--color-white, $fontColorWeight);
+      &:hover {
+        color: $--color-white;
+        background-color: mix($--tag-success-color, $--color-white, $hoverColorWeight);
+      }
+    }
+  }
+
+  &.bl-tag--warning {
+    background-color: mix($--tag-warning-color, $--color-white, $backgroundColorWeight);
+    border-color: mix($--tag-warning-color, $--color-white, $borderColorWeight);
+    color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
+
+    @include when(hit) {
+      border-color: $--tag-warning-color;
+    }
+
+    .bl-tag__close {
+      color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
+      &:hover {
+        color: $--color-white;
+        background-color: mix($--tag-warning-color, $--color-white, $hoverColorWeight);
+      }
+    }
+  }
+
+  &.bl-tag--danger {
+    background-color: mix($--tag-danger-color, $--color-white, $backgroundColorWeight);
+    border-color: mix($--tag-danger-color, $--color-white, $borderColorWeight);
+    color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
+
+    @include when(hit) {
+      border-color: $--tag-danger-color;
+    }
+
+    .bl-tag__close {
+      color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
+      &:hover {
+        color: $--color-white;
+        background-color: mix($--tag-danger-color, $--color-white, $hoverColorWeight);
+      }
+    }
+  }
+}
+
+.bl-border {
+  border-width: 1px;
+  border-style: solid;
+}
+
+@include b(tag) {
+  @include genThemeBase(8%, 100%, 100%, 100%);
+  display: inline-block;
+  padding: $--tag-padding;
+  // line-height: 22px;
+  height: 32px;
+  line-height: 32px;
+  font-size: $--tag-font-size;
+  color: $--tag-primary-color;
+  border-radius: $--tag-border-radius;
+  box-sizing: border-box;
+  white-space: nowrap;
+  font-weight: 500;
+
+  .bl-icon-close {
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 12px;
+    height: 16px;
+    width: 16px;
+    line-height: 17px;
+    vertical-align: middle;
+    top: -1px;
+    right: -5px;
+
+    &::before {
+      display: block;
+    }
+  }
+
+  @include m(dark) {
+    @include genTheme(100%, 100%, 0, 80%);
+  }
+
+  @include m(plain) {
+    border-width: 1px;
+    border-style: solid;
+    @include genTheme(0, 40%, 100%, 100%);
+  }
+
+  @include m(medium) {
+    padding: $--tag-m-padding;
+    height: 28px;
+    line-height: 28px;
+
+    .bl-icon-close {
+      transform: scale(.8);
+    }
+  }
+
+  @include m(small) {
+    padding: $--tag-s-padding;
+    height: 24px;
+    line-height: 24px;
+    .bl-icon-close {
+      transform: scale(.8);
+    }
+  }
+
+  @include m(mini) {
+    padding: $--tag-mini-padding;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+
+    .bl-icon-close {
+      margin-left: -3px;
+      transform: scale(.7);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.bl-page-header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	line-height: 24px;
+  align-items: center;
+  height: 76px;
+  box-shadow: 0px 1px 0px #F4F5F9;
+  background: #fff;
+}
+.bl-page-header__left {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	cursor: pointer;
+	margin-right: 24px;
+	position: relative;
+}
+.bl-page-header__left .bl-icon-arrow-left {
+	font-size: 24px;
+  margin-left: 32px;
+	-ms-flex-item-align: center;
+	align-self: center;
+}
+.bl-page-header__title {
+	font-weight: 600;
+  font-size: 20px;
+  color: #2A2A2A
+}
+.bl-page-header__content {
+  padding-right: 32px;
+  flex: 1;
+	font-size: 18px;
+	color: #303133;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
