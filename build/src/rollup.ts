@@ -8,7 +8,7 @@ import VueMacros from 'unplugin-vue-macros/rollup'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import commonjs from '@rollup/plugin-commonjs'
 export const PKG_NAME = 'bluepha-ui-plus'
-export const blOutput = path.resolve('dist', 'element-plus')
+export const blOutput = path.resolve('dist', 'bluepha-plus')
 export const buildConfig = {
   esm: {
     module: 'ESNext',
@@ -82,7 +82,7 @@ const componentsEntry = componentsName.filter(
   return path.resolve(componentsDir, name, 'index.ts')
 });
 const inputOptions = {
-  input: [...componentsEntry, 'packages/components/index.ts'],
+  input: [...componentsEntry, '../packages/components/index.ts'],
   plugins,
   external: ['vue', '@vue/shared', 'dom-event-types'],
   treeshake: false,
@@ -107,3 +107,4 @@ export const buildModules = async () => {
     })
   )
 }
+

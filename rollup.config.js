@@ -1,4 +1,5 @@
 import vue from 'rollup-plugin-vue'
+import dts from 'rollup-plugin-dts'
 import {nodeResolve} from '@rollup/plugin-node-resolve'
 import * as path from 'path'
 import * as fs from 'fs'
@@ -7,7 +8,7 @@ import VueMacros from 'unplugin-vue-macros/rollup'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import commonjs from '@rollup/plugin-commonjs'
 const PKG_NAME = 'bluepha-ui-plus'
-const blOutput = path.resolve('dist', 'element-plus')
+const blOutput = path.resolve('dist', 'bluepha-plus')
 export const buildConfig = {
   esm: {
     module: 'ESNext',
@@ -102,5 +103,17 @@ const results = buildConfigEntries.map(([module, config]) => {
     }),
   }
 });
-export default results;
+const typesResult = [];
+// const typesResult = [...componentsEntry, 'packages/components/index.ts'].map((input) => {
+//   return {
+//     input,
+//     output: {
+//       file: input.replace('.ts', '.d.ts'),
+//       format: 'esm'
+//     },
+//     external: [],
+//     plugins: [dts({ respectExternal: true })],
+//   }
+// })
+export default [...results, ...typesResult];
 

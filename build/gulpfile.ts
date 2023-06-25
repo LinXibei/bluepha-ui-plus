@@ -2,8 +2,7 @@ import { parallel, series } from 'gulp'
 import { copyFile, mkdir } from 'fs/promises'
 import * as fse from 'fs-extra'
 import * as path from 'path'
-import { blOutput, buildConfig } from './rollup'
-import { withTaskName, runTask, run } from './gulp'
+import { blOutput, buildConfig, withTaskName, runTask, run } from './src'
 
 export const projRoot = path.resolve(__dirname, '..')
 const blPackage = path.resolve(projRoot, 'package.json')
@@ -34,17 +33,8 @@ export const copyTypesDefinitions: Function = (done) => {
 export default series(
   withTaskName('clean', () => run('pnpm run clean')),
   withTaskName('createOutput', () => mkdir(blOutput, { recursive: true })),
-
-  parallel(
-    runTask('buildModules'),
-    // runTask('buildFullBundle'),
-    // series(
-    //   withTaskName('buildThemeChalk', () =>
-    //     run('pnpm run -C packages/theme-chalk build')
-    //   ),
-    //   copyFullStyle
-    // )
-  ),
+  runTask('buildModules'),
 
   parallel(copyTypesDefinitions, copyFiles)
 )
+export * from './src'

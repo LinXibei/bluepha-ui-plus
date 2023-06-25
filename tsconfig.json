@@ -8,7 +8,6 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -17,7 +16,13 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* 声明 */
+    "declaration": true, /* 生成相关的 '.d.ts' 文件。 */ 
+    "declarationDir": "./dist/types", /* '.d.ts' 文件输出目录 */ 
+    "emitDeclarationOnly": true, /* 只生成声明文件，不生成 js 文件*/ 
+    "rootDir": "."
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

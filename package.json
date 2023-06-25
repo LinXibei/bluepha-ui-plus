@@ -6,18 +6,49 @@
     "dev": "pnpm -C play dev",
     "build:play": "pnpm -C play build",
     "build:lib": "pnpm run clean && pnpm -C build start",
+    "build:rollup": "pnpm run clean && rollup -c",
+    "build:types": "tsc -b ./tsconfig.types.json",
     "clean": "rimraf dist",
     "preview": "vite preview",
     "gen": "bash ./scripts/generate.sh"
   },
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "es/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./es": "./es/index.mjs",
+    "./lib": "./lib/index.js",
+    "./es/*.mjs": "./es/*.mjs",
+    "./es/*": "./es/*.mjs",
+    "./lib/*.js": "./lib/*.js",
+    "./lib/*": "./lib/*.js",
+    "./*": "./*"
+  },
+  "style": "dist/index.css",
+  "unpkg": "dist/index.full.js",
+  "files": [
+    "lib",
+    "src",
+    "packages",
+    "types"
+  ],
   "dependencies": {
     "@bluepha-ui-plus/components": "workspace:^",
     "@bluepha-ui-plus/utils": "workspace:^",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
     "@types/vue": "^2.0.0",
     "@vue/shared": "^3.3.4",
     "rimraf": "^5.0.1",
+    "rollup-plugin-dts": "^5.3.0",
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
+    "rollup-plugin-vue": "^6.0.0",
     "vue": "^3.2.47"
   },
   "devDependencies": {

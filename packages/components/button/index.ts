@@ -4,3 +4,4 @@ export const BlButton = installComponent(Button)
 export default BlButton
 
 export * from './button'
+export * from './instance'
