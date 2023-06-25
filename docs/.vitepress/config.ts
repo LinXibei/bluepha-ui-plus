@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-
+import { demoBlockPlugin } from 'vitepress-theme-demoblock'
 import path from 'path'
 import fs from 'fs'
 import MarkdownIt from 'markdown-it'
@@ -126,6 +126,6 @@ export default defineConfig({
     ]
   },
   markdown: {
-    config: (md) => mdPlugin(md),
+    config: (md) => mdPlugin(demoBlockPlugin),
   },
 })

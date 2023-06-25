@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:dev": "yarn run register:components && vitepress dev docs",
+    "docs:build": "yarn run register:components && vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "register:components": "vitepress-rc"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,6 @@
     "markdown-it": "^13.0.1",
     "markdown-it-container": "^3.0.0",
     "prismjs": "^1.29.0",
-    "@bluepha-ui-plus": "workspace:*"
+    "vitepress-theme-demoblock": "^2.0.2"
   }
 }
