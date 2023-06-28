@@ -115,5 +115,5 @@ const typesResult = [];
 //     plugins: [dts({ respectExternal: true })],
 //   }
 // })
-export default [...results, ...typesResult];
+export default [...results];
 

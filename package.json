@@ -10,7 +10,11 @@
     "build:types": "tsc -b ./tsconfig.types.json",
     "clean": "rimraf dist",
     "preview": "vite preview",
-    "gen": "bash ./scripts/generate.sh"
+    "gen": "bash ./scripts/generate.sh",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "docs:preview": "vitepress preview docs"
   },
   "main": "lib/index.js",
   "module": "es/index.mjs",
@@ -49,6 +53,7 @@
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
     "rollup-plugin-vue": "^6.0.0",
+    "vitepress": "1.0.0-beta.3",
     "vue": "^3.2.47"
   },
   "devDependencies": {

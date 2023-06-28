@@ -15,9 +15,12 @@ export type SFCInstallContext<T> = SFCInstallComp<T> & {
 }
 // type Record<K extends string | number | symbol, T> = { [P in K]: T; }
 export const installComponent = <T extends Record<string, any>>(main: T) => {
-  (main as SFCInstallComp<T>).install =(app: App): void => {
+  (main as SFCInstallComp<T>).install = (app: App): void => {
     for (const comp of [main]) {
-      app.component(comp.name, comp);
+      const { __file, name} = comp;
+      const fileName = __file.match(/([^/]+)\.vue/)[1];
+      console.log(111111, fileName);
+      name ? app.component(name, comp) : app.component(`Bl${fileName.charAt(0).toUpperCase()}${fileName.slice(1)}`, comp);
     }
   }
   return main as SFCInstallComp<T>;
