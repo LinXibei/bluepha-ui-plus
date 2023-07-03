@@ -1,5 +1,24 @@
 <template>
-  <button>hello-world</button>
+  <button class="bl-button" @click="handleClick" :disabled="disabled || loading" :autofocus="autofocus"
+    :type="nativeType" :class="[
+      'bl-button',
+      type ? 'bl-button--' + type : '',
+      size ? 'bl-button--' + size : '',
+      {
+        'is-disabled': disabled,
+        'is-loading': loading,
+        'is-plain': plain,
+        'is-round': round,
+        'is-circle': circle,
+        'is-dashed': dashed,
+      }
+    ]">
+    <i class="bl-icon-loading" v-if="loading"></i>
+    <!-- <i :class="icon" v-if="icon && !loading"></i> -->
+    <span v-if="$slots.default">
+      <slot></slot>
+    </span>
+  </button>
   <!-- <button
     ref="_ref"
     :class="[
@@ -41,7 +60,9 @@
   </button> -->
 </template>
 <script lang="ts" setup>
+import { buttonProps } from './button'
 defineOptions({
   name: 'BlButton',
 })
+const {type, size, disabled, loading, autofocus, plain, round, circle, dashed, icon, text, link, loadingIcon, bg, buttonStyle, handleClick} = defineProps(buttonProps)
 </script>

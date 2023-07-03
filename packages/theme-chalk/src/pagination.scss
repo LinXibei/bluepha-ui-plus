@@ -1,7 +1,7 @@
-@import "mixins/mixins";
-@import "mixins/utils";
-@import "common/var";
-@import "select";
+@use "mixins/mixins";
+@use "mixins/utils";
+@use "common/var";
+@use "select";
 
 @include b(pagination) {
   white-space: nowrap;

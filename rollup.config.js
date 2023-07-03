@@ -7,6 +7,7 @@ import esbuild, { minify as minifyPlugin } from 'rollup-plugin-esbuild'
 import VueMacros from 'unplugin-vue-macros/rollup'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import commonjs from '@rollup/plugin-commonjs'
+import postcss from 'rollup-plugin-postcss'
 const PKG_NAME = 'bluepha-ui-plus'
 const blOutput = path.resolve('dist', 'bluepha-plus')
 export const buildConfig = {
@@ -38,7 +39,6 @@ export const buildConfig = {
 const buildConfigEntries = Object.entries(
   buildConfig
 )
-
 const plugins = [
   VueMacros({
     setupComponent: false,
@@ -49,6 +49,11 @@ const plugins = [
       }),
       vueJsx: vueJsx(),
     },
+  }),
+  postcss({
+    extract: true,
+    extensions: ['.css', '.scss', '.sass'],
+    use: ['sass']
   }),
   nodeResolve({
     extensions: ['.mjs', '.js', '.json', '.ts'],

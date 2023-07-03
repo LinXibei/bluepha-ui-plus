@@ -1,6 +1,9 @@
-@import "function";
-@import "../common/var";
+@use "function";
 
+$namespace: 'bl';
+$element-separator: '__';
+$modifier-separator: '--';
+$state-prefix: 'is-';
 /* Break-points
  -------------------------- */
 @mixin res($key, $map: $--breakpoints) {
@@ -65,10 +68,8 @@
   }
 }
 
-/* BEM
- -------------------------- */
 @mixin b($block) {
-  $B: $namespace+'-'+$block !global;
+  $B: $namespace + '-' + $block !global;
 
   .#{$B} {
     @content;

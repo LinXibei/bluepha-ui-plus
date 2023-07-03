@@ -179,7 +179,7 @@
 	color: #409EFF;
 }
 .bl-step.is-horizontal .bl-step__line {
-  width: calc(100% - 16px);
+  width: math.div(100%, 16px);
 	height: 1px;
 	top: 11px;
 	left: 0;

@@ -1,42 +1,42 @@
 @charset "UTF-8";
-@import "common/var";
-@import "mixins/button";
-@import "mixins/mixins";
-@import "mixins/utils";
+@use "mixins/mixins" as *;
+@use "common/var" as *;
+@use "mixins/button" as *;
+@use "mixins/utils" as *;
 
 @include b(button) {
   display: inline-block;
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
-  background: $--button-default-background-color;
-  border: $--border-base;
-  border-color: $--button-default-border-color;
-  color: $--button-default-font-color;
+  background: $button-default-background-color;
+  border: $border-base;
+  border-color: $button-default-border-color;
+  color: $button-default-font-color;
   -webkit-appearance: none;
   text-align: center;
   box-sizing: border-box;
   outline: none;
   margin: 0;
   transition: .1s;
-  font-weight: $--button-font-weight;
+  font-weight: $button-font-weight;
   @include utils-user-select(none);
   & + & {
     margin-left: 10px;
   }
 
-  @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius);
+  @include button-size($button-padding-vertical, $button-padding-horizontal, $button-font-size, $button-border-radius);
 
   &:hover,
   &:focus {
-    color: $--color-primary;
-    border-color: $--color-primary;
-    background-color: $--color-white;
+    color: $color-primary;
+    border-color: $color-primary;
+    background-color: $color-white;
   }
 
   &:active {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    color: mix($color-black, $color-primary, $button-active-shade-percent);
+    border-color: mix($color-black, $color-primary, $button-active-shade-percent);
     outline: none;
   }
 
@@ -54,50 +54,50 @@
   
     &:hover,
     &:focus {
-      background: $--color-white;
-      border-color: $--color-primary;
-      color: $--color-primary;
+      background: $color-white;
+      border-color: $color-primary;
+      color: $color-primary;
     }
 
     &:active {
-      background: $--color-white;
-      border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      background: $color-white;
+      border-color: mix($color-black, $color-primary, $button-active-shade-percent);
+      color: mix($color-black, $color-primary, $button-active-shade-percent);
       outline: none;
     }
   }
 
   @include when(dashed) {
-    border: 1px dashed $--border-color-base;
+    border: 1px dashed $border-color-base;
     &:hover,
     &:focus {
-      background: $--color-white;
-      border-color: $--color-primary;
-      color: $--color-primary;
+      background: $color-white;
+      border-color: $color-primary;
+      color: $color-primary;
     }
 
     &:active {
-      background: $--color-white;
-      border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      background: $color-white;
+      border-color: mix($color-black, $color-primary, $button-active-shade-percent);
+      color: mix($color-black, $color-primary, $button-active-shade-percent);
       outline: none;
     }
   }
 
   @include when(active) {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    color: mix($color-black, $color-primary, $button-active-shade-percent);
+    border-color: mix($color-black, $color-primary, $button-active-shade-percent);
   }
 
   @include when(disabled) {
     &,
     &:hover,
     &:focus {
-      color: $--button-disabled-font-color;
+      color: $button-disabled-font-color;
       cursor: not-allowed;
       background-image: none;
-      background-color: $--button-disabled-background-color;
-      border-color: $--button-disabled-border-color;
+      background-color: $button-disabled-background-color;
+      border-color: $button-disabled-border-color;
     }
 
     &.bl-button--text {
@@ -108,9 +108,9 @@
       &,
       &:hover,
       &:focus {
-        background-color: $--button-disabled-background-color;
-        border-color: $--button-disabled-border-color;
-        color: $--button-disabled-font-color;
+        background-color: $button-disabled-background-color;
+        border-color: $button-disabled-border-color;
+        color: $button-disabled-font-color;
       }
     }
   }
@@ -137,56 +137,56 @@
   }
   @include when(circle) {
     border-radius: 50%;
-    padding: $--button-padding-vertical;
+    padding: $button-padding-vertical;
   }
   @include m(primary) {
-    @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
+    @include button-variant($button-primary-font-color, $button-primary-background-color, $button-primary-border-color);
   }
   @include m(success) {
-    @include button-variant($--button-success-font-color, $--button-success-background-color, $--button-success-border-color);
+    @include button-variant($button-success-font-color, $button-success-background-color, $button-success-border-color);
   }
   @include m(warning) {
-    @include button-variant($--button-warning-font-color, $--button-warning-background-color, $--button-warning-border-color);
+    @include button-variant($button-warning-font-color, $button-warning-background-color, $button-warning-border-color);
   }
   @include m(danger) {
-    @include button-variant($--button-danger-font-color, $--button-danger-background-color, $--button-danger-border-color);
+    @include button-variant($button-danger-font-color, $button-danger-background-color, $button-danger-border-color);
   }
   @include m(info) {
-    @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
+    @include button-variant($button-info-font-color, $button-info-background-color, $button-info-border-color);
   }
   @include m(medium) {
-    @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius);
+    @include button-size($button-medium-padding-vertical, $button-medium-padding-horizontal, $button-medium-font-size, $button-medium-border-radius);
     @include when(circle) {
-      padding: $--button-medium-padding-vertical;
+      padding: $button-medium-padding-vertical;
     }
   }
   @include m(small) {
-    @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius);
+    @include button-size($button-small-padding-vertical, $button-small-padding-horizontal, $button-small-font-size, $button-small-border-radius);
     @include when(circle) {
-      padding: $--button-small-padding-vertical;
+      padding: $button-small-padding-vertical;
     }
   }
   @include m(mini) {
-    @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius);
+    @include button-size($button-mini-padding-vertical, $button-mini-padding-horizontal, $button-mini-font-size, $button-mini-border-radius);
     @include when(circle) {
-      padding: $--button-mini-padding-vertical;
+      padding: $button-mini-padding-vertical;
     }
   }
   @include m(link) {
     border-color: transparent;
-    color: $--color-primary;
+    color: $color-primary;
     background: transparent;
     padding-left: 0;
     padding-right: 0;
 
     &:hover,
     &:focus {
-      color: $--color-primary-hover;
+      color: $color-primary-hover;
       border-color: transparent;
       background-color: transparent;
     }
     &:active {
-      color: $--color-primary-hover;
+      color: $color-primary-hover;
       border-color: transparent;
       background-color: transparent;
     }
@@ -200,20 +200,20 @@
   }
   @include m(text) {
     border-color: transparent;
-    color: $--color-black;
+    color: $color-black;
     background: transparent;
  
 
     &:hover,
     &:focus {
-      color: $--color-black;
+      color: $color-black;
       border-color: transparent;
-      background-color: $--button-text-background-color;
+      background-color: $button-text-background-color;
     }
     &:active {
-      color: $--color-black;
+      color: $color-black;
       border-color: transparent;
-      background-color: $--button-text-background-color;
+      background-color: $button-text-background-color;
     }
 
     &.is-disabled,
@@ -247,10 +247,10 @@
       border-bottom-left-radius: 0;
     }
     &:first-child:last-child {
-      border-top-right-radius: $--button-border-radius;
-      border-bottom-right-radius: $--button-border-radius;
-      border-top-left-radius: $--button-border-radius;
-      border-bottom-left-radius: $--button-border-radius;
+      border-top-right-radius: $button-border-radius;
+      border-bottom-right-radius: $button-border-radius;
+      border-top-left-radius: $button-border-radius;
+      border-bottom-left-radius: $button-border-radius;
 
       &.is-round {
         border-radius: 30px;
@@ -267,7 +267,7 @@
       margin-right: -1px;
     }
 
-    &:not(.is-disabled) {
+    &:not(.is-disabled) mixin{
       &:hover,
       &:focus,
       &:active {
@@ -284,20 +284,20 @@
     & > .bl-button {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      border-left-color: rgba($--color-white, 0.5);
+      border-left-color: rgba($color-white, 0.5);
     }
   }
-  @each $type in (primary, success, warning, danger, info) {
-    .bl-button--#{$type} {
+  @each $--type in (primary, success, warning, danger, info) {
+    .bl-button--#{$--type} {
       &:first-child {
-        border-right-color: rgba($--color-white, 0.5);
+        border-right-color: rgba($color-white, 0.5);
       }
       &:last-child {
-        border-left-color: rgba($--color-white, 0.5);
+        border-left-color: rgba($color-white, 0.5);
       }
       &:not(:first-child):not(:last-child) {
-        border-left-color: rgba($--color-white, 0.5);
-        border-right-color: rgba($--color-white, 0.5);
+        border-left-color: rgba($color-white, 0.5);
+        border-right-color: rgba($color-white, 0.5);
       }
     }
   }

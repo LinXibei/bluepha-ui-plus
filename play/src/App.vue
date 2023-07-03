@@ -13,7 +13,7 @@ import Button from "../../packages/components/button";
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
-  <Button />
+  <Button type="primary">xxxxx</Button>
 </template>
 
 <style scoped>

@@ -1,7 +1,7 @@
-@import "common/var";
-@import "mixins/mixins";
-@import "mixins/_button";
-@import "mixins/utils";
+@use "common/var";
+@use "mixins/mixins";
+@use "mixins/_button";
+@use "mixins/utils";
 
 @include b(checkbox) {
   color: $--checkbox-font-color;

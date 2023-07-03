@@ -1,7 +1,7 @@
-@import "mixins/mixins";
-@import "mixins/utils";
-@import "common/var";
-@import "common/popup";
+@use "mixins/mixins";
+@use "mixins/utils";
+@use "common/var";
+@use "common/popup";
 
 @include b(dialog) {
   position: relative;

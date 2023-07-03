@@ -1,20 +1,20 @@
-@import "../common/var";
+@use "../common/var" as *;
 @mixin button-plain($color) {
   color: $color;
-  background: $--color-white;
-  border-color: mix($--color-white, $color, 60%);
+  background: $color-white;
+  border-color: mix($color-white, $color, 60%);
 
   &:hover,
   &:focus {
     background: $color;
     border-color: $color;
-    color: $--color-white;
+    color: $color-white;
   }
 
   &:active {
-    background: mix($--color-black, $color, $--button-active-shade-percent);
-    border-color: mix($--color-black, $color, $--button-active-shade-percent);
-    color: $--color-white;
+    background: mix($color-black, $color, $button-active-shade-percent);
+    border-color: mix($color-black, $color, $button-active-shade-percent);
+    color: $color-white;
     outline: none;
   }
 
@@ -23,29 +23,29 @@
     &:hover,
     &:focus,
     &:active {
-      color: mix($--color-white, $color, 40%);
-      background-color: mix($--color-white, $color, 90%);
-      border-color: mix($--color-white, $color, 80%);
+      color: mix($color-white, $color, 40%);
+      background-color: mix($color-white, $color, 90%);
+      border-color: mix($color-white, $color, 80%);
     }
   }
 }
 // dashed
 @mixin button-dashed($color) {
   color: $color;
-  background: $--color-white;
+  background: $color-white;
   border: 1px dashed $color;
 
 
   &:hover,
   &:focus {
     border-color: $color;
-    background: mix($--color-white, $color, 10%);
-    color:  $--color-white;
+    background: mix($color-white, $color, 10%);
+    color:  $color-white;
   }
 
   &:active {
-    background: mix($--color-black, $color, 20%);
-    color:  $--color-white;
+    background: mix($color-black, $color, 20%);
+    color:  $color-white;
     outline: none;
   }
 
@@ -54,9 +54,9 @@
     &:hover,
     &:focus,
     &:active {
-      color: mix($--color-white, $color, 40%);
-      background-color: mix($--color-white, $color, 90%);
-      border-color: mix($--color-white, $color, 80%);
+      color: mix($color-white, $color, 40%);
+      background-color: mix($color-white, $color, 90%);
+      border-color: mix($color-white, $color, 80%);
     }
   }
 }
@@ -67,21 +67,21 @@
 
   &:hover,
   &:focus {
-    background: mix($--color-black, $background-color, $--button-hover-tint-percent);
-    border-color: mix($--color-black, $border-color, $--button-hover-tint-percent);
+    background: mix($color-black, $background-color, $button-hover-tint-percent);
+    border-color: mix($color-black, $border-color, $button-hover-tint-percent);
     color: $color;
   }
   
   &:active {
-    background: mix($--color-black, $background-color, $--button-active-shade-percent);
-    border-color: mix($--color-black, $border-color, $--button-active-shade-percent);
+    background: mix($color-black, $background-color, $button-active-shade-percent);
+    border-color: mix($color-black, $border-color, $button-active-shade-percent);
     color: $color;
     outline: none;
   }
 
   &.is-active {
-    background: mix($--color-black, $background-color, $--button-active-shade-percent);
-    border-color: mix($--color-black, $border-color, $--button-active-shade-percent);
+    background: mix($color-black, $background-color, $button-active-shade-percent);
+    border-color: mix($color-black, $border-color, $button-active-shade-percent);
     color: $color;
   }
 
@@ -90,9 +90,9 @@
     &:hover,
     &:focus,
     &:active {
-      color: $--color-white;
-      background-color: mix($--color-white, $background-color, $--button-disabled-percent);
-      border-color: mix($border-color, $--color-white);
+      color: $color-white;
+      background-color: mix($color-white, $background-color, $button-disabled-percent);
+      border-color: mix($border-color, $color-white);
     }
   }
 

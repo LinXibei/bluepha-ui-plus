@@ -1,5 +1,5 @@
-@import "./var";
-@import "../mixins/mixins";
+@use "./var";
+@use "../mixins/mixins";
 
 .v-modal-enter {
   animation: v-modal-in .2s ease;

@@ -8,7 +8,7 @@ import VueMacros from 'unplugin-vue-macros/rollup'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import commonjs from '@rollup/plugin-commonjs'
 export const PKG_NAME = 'bluepha-ui-plus'
-export const blOutput = path.resolve('dist', 'bluepha-plus')
+export const blOutput = path.resolve('dist', 'bluepha-ui-plus')
 export const buildConfig = {
   esm: {
     module: 'ESNext',
