@@ -1,5 +1,5 @@
 import DefaultTheme from "vitepress/theme";
-import "element-plus/dist/index.css";
+import "../../../dist/bluepha-plus/es/index.css";
 import elementplus from "element-plus";
 import { BlButton } from "../../../dist/bluepha-plus/es/components/index.mjs";
 export default {

@@ -9,7 +9,7 @@ This page demonstrates usage of some of the runtime APIs provided by VitePress.
 The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
 
 <!-- <el-button>默认按钮</el-button>s -->
-<BlButton></BlButton>
+<BlButton type="primary">111111</BlButton>
 ```md
 <script setup>
 import { useData } from 'vitepress'
